@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: "mdservice2-stage"
+      - name: "mdservice2"
         ports:
         - containerPort: 80
 
