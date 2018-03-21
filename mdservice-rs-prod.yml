@@ -1,0 +1,13 @@
+apiVersion: "apps/v1"
+kind: "ReplicaSet"
+metadata:
+  name: "mdservice2-prod"
+spec:
+  replicas: 8
+  template:
+    spec:
+      containers:
+      - name: "mdservice2-prod"
+        ports:
+        - containerPort: 80
+

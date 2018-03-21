@@ -1,0 +1,8 @@
+steps:
+  - name: "gcr.io/cloud-builders/go"
+    args: ["install", "github.com/skim1420/mdservice2"]
+    env: ["PROJECT_ROOT=github.com/skim1420/mdservice2"]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/spinnaker-1022/mdservice2:$REVISION_ID", "-f", "Dockerfile.gcb", "."]
+images:
+  - "gcr.io/spinnaker-1022/mdservice2:$REVISION_ID"

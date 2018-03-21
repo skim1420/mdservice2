@@ -1,0 +1,5 @@
+FROM alpine
+
+COPY gopath/bin/mdservice2 /go/bin/mdservice2
+
+ENTRYPOINT /go/bin/mdservice2
