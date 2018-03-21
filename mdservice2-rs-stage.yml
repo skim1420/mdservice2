@@ -1,5 +1,5 @@
-apiVersion: "apps/v1"
-kind: "ReplicaSet"
+apiVersion: "apps/v1beta1"
+kind: "Deployment"
 metadata:
   name: "mdservice2-stage"
 spec:
@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: "mdservice2"
+      - image: "gcr.io/spinnaker-1022/mdservice2"
         ports:
         - containerPort: 80
 
