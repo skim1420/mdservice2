@@ -13,8 +13,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    labels:
-      app: mdservice2-stage
+    app: mdservice2-stage
     load-balancer-mdservice2-stage: true
   sessionAffinity: None
   type: LoadBalancer
