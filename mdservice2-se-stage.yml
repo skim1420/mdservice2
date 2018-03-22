@@ -1,18 +1,20 @@
-apiVersion: "v1"
-kind: "Service"
+apiVersion: v1
+kind: Service
 metadata:
-  name: "mdservice2-stage"
+  name: stage
   namespace: mdservice2
 spec:
   externalIPs: []
-  externalTrafficPolicy: "Cluster"
+  externalTrafficPolicy: Cluster
   loadBalancerSourceRanges: []
   ports:
-  - name: "http"
+  - name: http
     port: 80
-    protocol: "TCP"
+    protocol: TCP
     targetPort: 80
   selector:
-    load-balancer-mdservice2-stage: "true"
-  sessionAffinity: "None"
-  type: "LoadBalancer"
+    labels:
+      app: mdservice2-stage
+    load-balancer-mdservice2-stage: true
+  sessionAffinity: None
+  type: LoadBalancer
