@@ -4,6 +4,7 @@ metadata:
   name: mdservice2-deployment-name
   labels:
     app: mdservice2-stage
+  namespace: mdservice2
 spec:
   replicas: 2
   selector:
