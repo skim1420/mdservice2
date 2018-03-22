@@ -1,14 +1,22 @@
-apiVersion: "apps/v1beta1"
-kind: "Deployment"
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: "mdservice2-deployment-name"
+  name: mdservice2-deployment-name
+  labels:
+    app: mdservice2
 spec:
   replicas: 2
+  selector:
+    matchLabel:
+      app: mdservice2
   template:
+    metadata:
+      labels:
+        app: mdservice2
     spec:
       containers:
-      - image: "gcr.io/spinnaker-1022/mdservice2"
-        name: "mdservice2-container-name"
+      - image: gcr.io/spinnaker-1022/mdservice2
+        name: mdservice2-container-name
         ports:
         - containerPort: 80
 
