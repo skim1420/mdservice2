@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: stage
   labels:
-    cluster: mdservice2-stage
+    mdservice2-cluster: stage
   namespace: mdservice2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      cluster: mdservice2-stage
+      mdservice2-cluster: stage
   template:
     metadata:
       labels:
-        cluster: mdservice2-stage
-        service: mdservice2-stage
+        mdservice2-cluster: stage
+        mdservice2-service: stage
     spec:
       containers:
       - image: gcr.io/spinnaker-1022/mdservice2
