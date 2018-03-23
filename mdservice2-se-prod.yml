@@ -6,6 +6,7 @@ metadata:
 spec:
   selector:
     app: mdservice2-prod
+    app: mdservice2-prod-canary
   externalIPs: []
   externalTrafficPolicy: Cluster
   loadBalancerSourceRanges: []
