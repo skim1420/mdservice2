@@ -5,7 +5,7 @@ metadata:
   namespace: mdservice2
 spec:
   selector:
-    app: mdservice2-stage
+    service: mdservice2-stage
   externalIPs: []
   externalTrafficPolicy: Cluster
   loadBalancerSourceRanges: []
