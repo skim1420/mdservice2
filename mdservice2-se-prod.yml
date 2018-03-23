@@ -5,7 +5,7 @@ metadata:
   namespace: mdservice2
 spec:
   selector:
-    service: mdservice2-se-prod
+    service: mdservice2-prod
   externalIPs: []
   externalTrafficPolicy: Cluster
   loadBalancerSourceRanges: []
