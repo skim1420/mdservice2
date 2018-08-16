@@ -17,7 +17,7 @@ spec:
         mdservice2-service: prod
     spec:
       containers:
-      - image: gcr.io/spinnaker-1022/mdservice2
+      - image: gcr.io/spinnaker-1022/mdservice2:release
         name: mdservice2-prod-canary
         ports:
         - containerPort: 80
