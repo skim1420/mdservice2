@@ -1,0 +1,35 @@
+[
+  {% for image in results.images %}
+  {
+    {% set split = image.name.split(":") %}
+    "reference": "{{ split[0] }}@{{ image.digest }}",
+    "name": "{{ image.name }}",
+    "version": "{{ image.digest }}",
+    "type": "docker/image"
+  }, {% endfor %}
+  {
+    "type": "github/file",
+    "name": "mdservice2-rs-stage.yml",
+    "reference": "https://api.github.com/repos/skim1420/mdservice2/contents/k8s/mdservice2-rs-stage.yml",
+    "version": "{{ sourceProvenance.resolvedRepoSource.commitSha }}"
+  },
+  {
+    "type": "github/file",
+    "name": "mdservice2-rs-prod.yml",
+    "reference": "https://api.github.com/repos/skim1420/mdservice2/contents/k8s/mdservice2-rs-prod.yml",
+    "version": "{{ sourceProvenance.resolvedRepoSource.commitSha }}"
+  },
+  {
+    "type": "github/file",
+    "name": "mdservice2-rs-prod-canary.yml",
+    "reference": "https://api.github.com/repos/skim1420/mdservice2/contents/k8s/mdservice2-rs-prod-canary.yml",
+    "version": "{{ sourceProvenance.resolvedRepoSource.commitSha }}"
+  },
+  {
+    "type": "github/file",
+    "name": "mdservice2-rs-prod-baseline.yml",
+    "reference": "https://api.github.com/repos/skim1420/mdservice2/contents/k8s/mdservice2-rs-prod-baseline.yml",
+    "version": "{{ sourceProvenance.resolvedRepoSource.commitSha }}"
+  }
+]
+
