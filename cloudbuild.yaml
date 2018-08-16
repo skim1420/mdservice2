@@ -6,4 +6,4 @@ steps:
     args: ["build", "-t", "gcr.io/spinnaker-1022/mdservice2:release", "-t", "gcr.io/spinnaker-1022/mdservice2:$REVISION_ID", "-f", "Dockerfile.gcb", "."]
 images:
   - "gcr.io/spinnaker-1022/mdservice2:$REVISION_ID"
-  - "gcr.io/spinnaker-1022/mdservice2:release
+  - "gcr.io/spinnaker-1022/mdservice2:release"
