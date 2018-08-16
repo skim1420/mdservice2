@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stage
+  labels:
+    mdservice2-cluster: stage
+  namespace: mdservice2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      mdservice2-cluster: stage
+  template:
+    metadata:
+      labels:
+        mdservice2-cluster: stage
+        mdservice2-service: stage
+    spec:
+      containers:
+      - image: gcr.io/spinnaker-1022/mdservice2:release
+        name: mdservice2-stage
+        ports:
+        - containerPort: 80
+
