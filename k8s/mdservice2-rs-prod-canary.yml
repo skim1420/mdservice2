@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-canary
+  labels:
+    mdservice2-cluster: prod-canary
+  namespace: mdservice2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      mdservice2-cluster: prod-canary
+  template:
+    metadata:
+      labels:
+        mdservice2-cluster: prod-canary
+        mdservice2-service: prod
+    spec:
+      containers:
+      - image: gcr.io/spinnaker-1022/mdservice2
+        name: mdservice2-prod-canary
+        ports:
+        - containerPort: 80
+
